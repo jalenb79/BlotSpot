@@ -27,6 +27,8 @@
     <string name= "response_19">Yes, I am an Animist.</string>
     <string name= "sub">Submit</string>
     <string name="title_activity_display_message">My Message</string>
+    <string name="title_activity_twitter_feed">TwitterFeed</string>
+    <string name= "helloWorld">Hello World!</string>
 
 
 

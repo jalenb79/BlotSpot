@@ -1,24 +1,30 @@
 package com.blotspot.jalen.blotspot;
 
-        import android.content.Context;
-        import android.content.SharedPreferences;
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.widget.Button;
-        import android.widget.RadioButton;
-        import android.widget.RadioGroup;
-        import android.widget.Toast;
-       /* import com.twitter.sdk.android.Twitter;
-        import com.twitter.sdk.android.core.TwitterAuthConfig;
-        import com.twitter.sdk.android.core.TwitterException;
-        import com.twitter.sdk.android.core.models.Tweet;
-        import com.twitter.sdk.android.tweetui.CompactTweetView;
-        import com.twitter.sdk.android.tweetui.LoadCallback;
-        import com.twitter.sdk.android.tweetui.TweetUtils;*/
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.*;
+import io.fabric.sdk.android.Fabric;
+import com.twitter.sdk.android.core.models.Tweet;
+import com.twitter.sdk.android.tweetui.*;
 
 
 public class SurveyPage extends AppCompatActivity {
+
+    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
+    private static final String TWITTER_KEY = "lDgYxBWdaoz1ObUcAGlTefleC";
+    private static final String TWITTER_SECRET = "lIjQFZobjtXXod7biIDMBFlV1AYHwuXgeYMUQxutjmpl0s79HC";
+
     private static RadioGroup radioGroupSocialMedia;
     private static RadioButton radioButtonSocialMedia;
     private static RadioGroup radioGroupMillenials;
@@ -37,8 +43,7 @@ public class SurveyPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_survey_page);
-        onClicklistenerButton();
+
 
     }
 
@@ -101,8 +106,12 @@ public class SurveyPage extends AppCompatActivity {
                         String testString = socialMediaRadioButtonText + millenialsRadioButtonText +
                                 popCultureRadioButtonText + politicsRadioButtonText + religionRadioButtonText;
                         String testString_1 = prefs.getString("keyTestString","TestString");
-                        Toast.makeText(SurveyPage.this,
-                                testString_1, Toast.LENGTH_SHORT). show();
+
+                       Toast.makeText(SurveyPage.this,
+                               testString_1, Toast.LENGTH_SHORT). show();
+
+                        /*Intent myIntent = new Intent(SurveyPage.this,TwitterFeed.class);
+                        startActivity(myIntent);*/
 
 
                     }
